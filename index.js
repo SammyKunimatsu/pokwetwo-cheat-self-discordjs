@@ -84,7 +84,8 @@ let pokemon_lendarios = [
     "zygarde" ,// #718
   
     // Sétima geração 
-    "type-null" ,// #772 
+    "type-null" ,// #772
+    "type: null", 
     "silvally" ,// #773 
     "tapu koko" ,// #785 
     "tapu lele" ,// #786 
