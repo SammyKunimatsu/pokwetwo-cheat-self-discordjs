@@ -242,6 +242,63 @@ client.on("messageCreate", async(message) => {
 })
 
 client.login(process.env.DISCORD_TOKEN);
+
+function gerarStringAleatoria(tamanho) {
+  var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var resultado = '';
+  for (var i = 0; i < tamanho; i++ ) {
+      resultado += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+  }
+  return resultado;
+}
+
+if(process.env.ALT_TOKEN1){
+  const alt1Client = new Client({
+    checkUpdate: false
+  })
+
+  alt1Client.login(process.env.ALT_TOKEN1)
+
+  alt1Client.on("ready", async() => {
+    console.log(`Alt 1 ativada na conta de: ${alt1Client.user.username}`)
+  
+    const guild = alt1Client.guilds.cache.get(config.alts.guild)
+  const channel = guild.channels.cache.get(config.alts.channel)
+
+  setInterval(() => {
+
+    const random = Math.floor(Math.random() * 50) + 1;
+    channel.send(`${gerarStringAleatoria(random)}`)
+
+  }, 1000)
+
+})
+
+}
+
+if(process.env.ALT_TOKEN2){
+  const alt2Client = new Client({
+    checkUpdate: false
+  })
+
+  alt2Client.login(process.env.ALT_TOKEN2)
+
+  alt2Client.on("ready", async() => {
+    console.log(`Alt 2 ativada na conta de: ${alt2Client.user.username}`)
+  
+    const guild = alt2Client.guilds.cache.get(config.alts.guild)
+  const channel = guild.channels.cache.get(config.alts.channel)
+
+  setInterval(() => {
+
+    const random = Math.floor(Math.random() * 50) + 1;
+    channel.send(`${gerarStringAleatoria(random)}`)
+
+  }, 1000)
+
+})
+  
+}
   
 process.on('unhandledRejection', (err) => {
   Error.captureStackTrace(err, null);

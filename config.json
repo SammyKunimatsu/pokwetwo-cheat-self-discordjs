@@ -1,8 +1,12 @@
 {
-    "channels": [],
+    "channels": ["1151296769045573693"],
     "blackList": [],
     "allPkmn": true,
     "pseudoLegenOnly": false,
     "legenOnly": false,
-    "miticoOnly": false
+    "miticoOnly": false,
+    "alts": {
+        "guild": "1061427646770196561",
+        "channel": "1151296769045573693"
+    }
 }
